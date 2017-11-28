@@ -1,0 +1,12 @@
+name: leadMap
+title: leadMap
+username:
+account: chris-prener
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 241159
+bundleId: 1102039
+url: https://chris-prener.shinyapps.io/leadMap/
+when: 1511901478.76766
+asMultiple: FALSE
+asStatic: FALSE

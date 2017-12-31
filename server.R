@@ -9,7 +9,7 @@ lead <- read.csv("data/stllead.csv", stringsAsFactors = FALSE)
 
 lead <- lead %>%
   mutate(GEOID = as.character(geoID)) %>%
-  mutate(PCTELE = round(pctElevated*.01, digits = 2)) %>%
+  mutate(PCTELE = round(pctElevated, digits = 2)) %>%
   mutate(WHITE = round((white/totalPop)*100, digits = 2)) %>%
   mutate(BLACK = round((black/totalPop)*100, digits = 2)) %>%
   mutate(POVERTY = round((povertyTot/totalPop)*100, digits = 2)) %>%
@@ -143,7 +143,7 @@ shinyServer(function(input, output, session) {
       select(NAMELSAD, TOTPOP, PCTELE, WHITE, BLACK, POVERTY) %>%
       rename(`Census Tract` = NAMELSAD) %>%
       rename(`Total Pop.` = TOTPOP) %>%
-      mutate(PCTELE = PCTELE*100) %>%
+      mutate(PCTELE = PCTELE) %>%
       rename(`% Elevated` = PCTELE) %>%
       rename(`% White` = WHITE) %>%
       rename(`% Black` = BLACK) %>%
